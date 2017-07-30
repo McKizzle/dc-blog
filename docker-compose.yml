@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+    nginx:
+        image: nginx:latest
+        container_name: nginx
+        ports:
+            - "80:80"
+        volumes:
+            - ./config/nginx/:/etc/nginx/conf.d/
+            - ./nginx/www:/var/www/
+        restart: always
+
